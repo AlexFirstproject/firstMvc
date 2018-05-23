@@ -6,7 +6,6 @@ class Router
     protected $controller;
     protected $action;
     protected $params;
-    protected $routes;
     protected $route;
     protected $method_prefix;
     protected $languages;
@@ -29,11 +28,6 @@ class Router
     public function getParams()
     {
         return $this->params;
-    }
-
-    public function getRoutes()
-    {
-        return $this->routes;
     }
 
     public function getRoute()
