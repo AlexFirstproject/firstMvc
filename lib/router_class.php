@@ -7,6 +7,7 @@ class Router
     protected $action;
     protected $params;
     protected $routes;
+    protected $route;
     protected $method_prefix;
     protected $languages;
 
@@ -33,6 +34,11 @@ class Router
     public function getRoutes()
     {
         return $this->routes;
+    }
+
+    public function getRoute()
+    {
+        return $this->route;
     }
 
     public function getMethodPrefix()
