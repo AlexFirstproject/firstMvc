@@ -16,4 +16,11 @@ class Page extends Model
         $result = $this->db->query($sql);
         return isset($result[0]) ? $result[0] : null;
     }
+
+    public function getById($id){
+        $id = (int)$id;
+        $sql = "SELECT * FROM pages WHERE id = '{$id}' LIMIT 1";
+        $result = $this->db->query($sql);
+        return isset($result[0]) ? $result[0] : null;
+    }
 }
