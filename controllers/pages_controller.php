@@ -32,6 +32,7 @@ class PagesController extends Controller
         if ( isset($this->params[0]) ){
             $this->data['page'] = $this->model->getById($this->params[0]);
             var_dump($this->data['page']);
+            var_dump(is_bool($this->data['page']['is_pablished']));
         } else {
             Session::setFlash('Wrong page id.');
             Router::redirect('/admin/pages/');
