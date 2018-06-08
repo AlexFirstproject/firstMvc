@@ -28,9 +28,9 @@
 
     <div class="starter-template">
         <?php if( Session::hasFlash() ){ ?>
-        <div class="alert alert-info" role="alert">
-            <?php Session::flash(); ?>
-        </div>
+            <div class="alert alert-info" role="alert">
+                <?php Session::flash(); ?>
+            </div>
         <?php } ?>
 
         <?=$data['content'];?>

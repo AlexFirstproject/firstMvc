@@ -14,8 +14,8 @@
         <textarea id="content" name="content" class="form-control"><?=$data['page']['content']?></textarea>
     </div>
     <div class="form-group">
-        <label for="is_published">Publish?</label>
-        <input type="checkbox" name="is_pablished" id="is_published"<?php if ( $data['page']['is_published'] ){ ?> checked<?php } ?>/>
+        <label for="is_pablished">Publish?</label>
+        <input type="checkbox" name="is_pablished" id="is_pablished" value="" <?php if ( $data['page']['is_pablished'] ){ ?> checked<?php } ?>/>
     </div>
     <input type="submit" class="btn btn-success" />
 </form>

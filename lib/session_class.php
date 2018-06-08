@@ -4,7 +4,7 @@ class Session
 {
     protected static $flash_message;
 
-    public static function setMessage($message){
+    public static function setFlash($message){
         self::$flash_message = $message;
     }
 

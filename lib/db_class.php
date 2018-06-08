@@ -16,7 +16,7 @@ class DB
 
     public function query($sql)
     {
-        if (!$this->connection){
+        if ( !$this->connection ){
             return false;
         }
 
@@ -30,7 +30,7 @@ class DB
             return $result;
         }
 
-        $data = array();
+        $data = [];
         while ( $row = mysqli_fetch_assoc($result) ){
             $data[] = $row;
         }
