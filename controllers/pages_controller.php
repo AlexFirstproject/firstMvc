@@ -46,10 +46,13 @@ class PagesController extends Controller
             $result = $this->model->save($_POST, $id);
             if ( $result ){
                 Session::setFlash('Page was saved.');
+                $_SESSION['flash'] = 'Page was saved.';
             }else{
                 Session::setFlash('Error.');
+                $_SESSION['flash'] = 'Error.';
             }
             Router::redirect('/admin/pages/');
+            die;
         }
 
         if ( isset($this->params[0]) ){

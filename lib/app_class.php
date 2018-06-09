@@ -19,6 +19,9 @@ class App
 
         Lang::load(self::$router->getLanguages());
 
+        //Для второго способа вывода message.
+        //Session::setFlash($_SESSION['flash']);
+
         $controller_class = ucfirst(self::$router->getController()).'Controller';
         $controller_method = strtolower(self::$router->getMethodPrefix().self::$router->getAction());
 
