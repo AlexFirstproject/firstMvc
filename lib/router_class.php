@@ -65,7 +65,6 @@ class Router
         $path_parts = explode('/', $path);
 
         if (count($path_parts)){
-
             //Get route or languages at first element
             if (in_array(strtolower(current($path_parts)), array_keys($routes))){
                 $this->route = strtolower(current($path_parts));
@@ -85,7 +84,6 @@ class Router
                 $this->action = strtolower(current($path_parts));
                 array_shift($path_parts);
             }
-
             //Get params - all the rest
             $this->params = $path_parts;
         }
