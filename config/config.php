@@ -5,7 +5,7 @@ Config::set('site_name', 'Your site name');
 Config::set('languages', array('en', 'fr'));
 
 //Routes. Rout name => method prefix
-Config::set('routes', array(
+Config::set('roles', array(
     'default' => '',
     'admin'   => 'admin_',
 ));

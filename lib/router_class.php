@@ -50,9 +50,9 @@ class Router
         $this->uri = urldecode(trim($uri, '/'));
 
         //Get default
-        $routes = Config::get('routes');
+        $roles = Config::get('routes');
         $this->route = Config::get('default_route');
-        $this->method_prefix = isset($routes[$this->route]) ? $routes[$this->route] : '';
+        $this->method_prefix = isset($roles[$this->route]) ? $roles[$this->route] : '';
         $this->languages = Config::get('default_languages');
         $this->controller = Config::get('default_controller');
         $this->action = Config::get('default_action');
@@ -66,9 +66,9 @@ class Router
 
         if (count($path_parts)){
             //Get route or languages at first element
-            if (in_array(strtolower(current($path_parts)), array_keys($routes))){
+            if (in_array(strtolower(current($path_parts)), array_keys($roles))){
                 $this->route = strtolower(current($path_parts));
-                $this->method_prefix = isset($routes[$this->route]) ? $routes[$this->route] : '';
+                $this->method_prefix = isset($roles[$this->route]) ? $roles[$this->route] : '';
                 array_shift($path_parts);
             } elseif (in_array(strtolower(current($path_parts)), Config::get('languages'))){
                 $this->languages = strtolower(current($path_parts));
