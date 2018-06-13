@@ -32,11 +32,14 @@ class PagesController extends Controller
         if ( $_POST ){
             $result = $this->model->save($_POST);
             if ( $result ){
-                Session::setFlash('Page was saved.');
+                //Session::setFlash('Page was saved.');
+                $_SESSION['flash'] = 'Page was saved.';
             }else{
-                Session::setFlash('Error.');
+                //Session::setFlash('Error.');
+                $_SESSION['flash'] = 'Error.';
             }
             Router::redirect('/admin/pages/');
+            die;
         }
     }
 
@@ -45,10 +48,10 @@ class PagesController extends Controller
             $id = isset($_POST['id']) ? $_POST['id'] : null;
             $result = $this->model->save($_POST, $id);
             if ( $result ){
-                Session::setFlash('Page was saved.');
+                //Session::setFlash('Page was saved.');
                 $_SESSION['flash'] = 'Page was saved.';
             }else{
-                Session::setFlash('Error.');
+                //Session::setFlash('Error.');
                 $_SESSION['flash'] = 'Error.';
             }
             Router::redirect('/admin/pages/');
@@ -67,11 +70,14 @@ class PagesController extends Controller
         if ( isset($this->params[0]) ){
             $result = $this->model->delete($this->params[0]);
             if ( $result ){
-                Session::setFlash('Page was delete.');
+                //Session::setFlash('Page was delete.');
+                $_SESSION['flash'] = 'Page was delete.';
             }else{
-                Session::setFlash('Error.');
+                //Session::setFlash('Error.');
+                $_SESSION['flash'] = 'Error.';
             }
         }
         Router::redirect('/admin/pages/');
+        die;
     }
 }

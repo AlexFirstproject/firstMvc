@@ -50,7 +50,7 @@ class Router
         $this->uri = urldecode(trim($uri, '/'));
 
         //Get default
-        $roles = Config::get('routes');
+        $roles = Config::get('roles');
         $this->route = Config::get('default_route');
         $this->method_prefix = isset($roles[$this->route]) ? $roles[$this->route] : '';
         $this->languages = Config::get('default_languages');

@@ -16,10 +16,13 @@
             <a class="navbar-brand" href="#"><?=Config::get('site_name');?> - <?=__('lng_admin','Admin Section')?></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
+            <?php if ( Session::get('login') ) { ?>
             <ul class="nav navbar-nav">
                 <li><a <?php if ( App::getRouter()->getController() == 'pages' ) {?>class = 'activ'<?php } ?> href="/admin/pages/">Pages</a></li>
                 <li><a <?php if ( App::getRouter()->getController() == 'contacts' ) {?>class = 'activ'<?php } ?> href="/admin/contacts/">Contacts</a></li>
+                <li><a href="/admin/users/logout">Logout</a></li>
             </ul>
+            <?php } ?>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
@@ -38,7 +41,7 @@
         <?php if( $_SESSION['flash'] ){ ?>
         <div class="alert alert-info" role="alert">
             <?php echo $_SESSION['flash'];
-                       $_SESSION['flash'] = null; ?>
+                       unset($_SESSION['flash']); ?>
         </div>
         <?php } ?>
 
