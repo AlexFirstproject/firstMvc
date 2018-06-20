@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-06-20 17:31:11
+/* Smarty version 3.1.32, created on 2018-06-20 22:18:30
   from 'C:\OpenServer\domains\myproject2\views\templates\pages\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b2a652fc9e878_33405903',
+  'unifunc' => 'content_5b2aa886f0a061_35572148',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b2a652fc9e878_33405903 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b2aa886f0a061_35572148 (Smarty_Internal_Template $_smarty_tpl) {
 ?>This is the pages/index.html
 
 <br/>
