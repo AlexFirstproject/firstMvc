@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?=Config::get('site_name');?></title>
+    <title>{Config::get('site_name')}</title>
     <link rel="stylesheet" href="/webroot/css/bootstrap.min.css">
     <link rel="stylesheet" href="/webroot/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/webroot/css/style.css">
@@ -13,12 +13,12 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><?=Config::get('site_name');?></a>
+                <a class="navbar-brand" href="#">{Config::get('site_name')}</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a <?php if ( App::getRouter()->getController() == 'pages' ) {?>class = 'activ'<?php } ?> href="/pages/">Pages</a></li>
-                    <li><a <?php if ( App::getRouter()->getController() == 'contacts' ) {?>class = 'activ'<?php } ?> href="/contacts/">Contacts</a></li>
+                    <li><a {if App::getRouter()->getController() == 'pages'}class = 'activ'{/if} href="/pages/">Pages</a></li>
+                    <li><a {if App::getRouter()->getController() == 'contacts'}class = 'activ'{/if} href="/contacts/">Contacts</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -27,19 +27,20 @@
     <div class="container">
 
         <div class="starter-template">
-            <?php if( Session::hasFlash() ){ ?>
-                <div class="alert alert-info" role="alert">
-                    <?php Session::flash(); ?>
-                </div>
-            <?php } ?>
+            {if $_SESSION['flash']}
+            <div class="alert alert-info" role="alert">
+                {$_SESSION['flash']}
+                {Session::delete('flash')}
+            </div>
+            {/if}
 
-            <?=$data['content'];?>
+            {$data.content}
 
             <br>
             <br>
 
-            <?=__('lng.text', 'defaul value')?> --- запрос с имеющимся ключом в языковом списке есть и в en и в fr.<br>
-            <?=__('lng.text2', 'defaul value')?> --- запрос с имеющимся ключом в языковом списке 2 есть только в fr в en будет выведен default текст.<br>
+            {__('lng.text', 'defaul value')} --- запрос с имеющимся ключом в языковом списке есть и в en и в fr.<br>
+            {__('lng.text2', 'defaul value')} --- запрос с имеющимся ключом в языковом списке 2 есть только в fr в en будет выведен default текст.<br>
         </div>
 
     </div>

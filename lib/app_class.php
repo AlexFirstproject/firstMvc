@@ -2,17 +2,14 @@
 
 class App
 {
-
     protected static $router;
     public static $db;
 
-    public static function getRouter()
-    {
+    public static function getRouter(){
         return self::$router;
     }
 
-    public static function run($uri)
-    {
+    public static function run($uri){
         self::$router = new Router($uri);
 
         self::$db = new DB( Config::get('db.host'), Config::get('db.user'), Config::get('db.password'), Config::get('db.db_name') );
@@ -42,8 +39,9 @@ class App
         }else{
             throw new Exception ('Method '.$controller_method.' of class '.$controller_class.' does not exist.');
         }
+        $layout_path = $layout.'.tpl';
 
-        $layout_path = VIEWS_PATH.DS.$layout.'.html';
+        //$layout_path = VIEWS_PATH.DS.$layout.'.html';
         $layout_view_object = new View(compact('content'), $layout_path);
         echo $layout_view_object->render();
     }
