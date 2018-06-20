@@ -3,24 +3,8 @@
 class View
 {
     protected $data;
-    //protected $path;
     protected $controller_dir = null;
     protected $template_name;
-
-    /*protected function getDefaultViewPath()
-    {
-        $router = App::getRouter();
-        if (!$router){
-            return false;
-        }
-
-        $this->controller_dir = $router->getController();
-        $this->template_name = $router->getMethodPrefix().$router->getAction().'.tpl';
-
-        //$this->controller_dir = $router->getController();
-        //$this->template_name = $router->getMethodPrefix().$router->getAction().'.tpl';
-        //return VIEWS_PATH.DS.'templates'.DS.$controller_dir.DS.$template_name;
-    }*/
 
     public function __construct($data = array(), $path = null)
     {
@@ -32,7 +16,6 @@ class View
         if (!$path){
             $this->controller_dir = $router->getController();
             $template_name = $router->getMethodPrefix().$router->getAction().'.tpl';
-            //$path = self::getDefaultViewPath();
         }else{
             $template_name = $path;
         }
@@ -57,12 +40,6 @@ class View
         $smarty->assign('data', $this->data);
 
         $content = $smarty->fetch( $this->template_name );
-
-        /*$data = $this->data;
-
-        ob_start();
-        include($this->path);
-        $content = ob_get_clean();*/
 
         return $content;
     }
