@@ -19,11 +19,14 @@ class View
         }else{
             $template_name = $path;
         }
-        /*if (!file_exists($path)){
-            throw new Exception('Template file is not found in path: '.$path);
-        }*/
+
         $this->data = $data;
         $this->template_name = $template_name;
+
+        $path = VIEWS_PATH.DS.'templates'.DS;
+        if (!file_exists($path.$this->template_name) && !file_exists($path.$this->controller_dir.DS.$this->template_name) ){
+            throw new Exception('Template file is not found in path: '.$this->template_name);
+        }
     }
 
     public function render()
