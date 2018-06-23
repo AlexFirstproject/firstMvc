@@ -2,10 +2,18 @@
 
 class Page extends Model
 {
-    public function getList($only_published = false){
-        $sql = "SELECT * FROM pages WHERE 1";
-        if($only_published){
-            $sql .= 'AND is_published = 1';
+    public function getList( $represent = null, $start = 0, $only_published = false ) {
+        if ( $represent == null ){
+            $sql = "SELECT * FROM pages WHERE 1";
+            if($only_published){
+                $sql .= ' AND is_published = 1';
+            }
+        } else {
+            $sql = "SELECT * FROM pages WHERE 1";
+            if($only_published){
+                $sql .= ' AND is_published = 1';
+            }
+            $sql .= " LIMIT $start, $represent";
         }
         return $this->db->query($sql);
     }

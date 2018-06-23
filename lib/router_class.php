@@ -61,7 +61,6 @@ class Router
 
         //Get path like /lng/controller/action/param1/param2
         $path = $uri_parts[0];
-
         $path_parts = explode('/', $path);
 
         if (count($path_parts)){

@@ -21,3 +21,5 @@ Config::set('db.password', '');
 Config::set('db.db_name', 'mvc');
 
 Config::set('salt', 'jcb8732dsvds9efv7');
+
+Config::set('represent_page', 3);

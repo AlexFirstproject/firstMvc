@@ -42,7 +42,6 @@
             {__('lng.text', 'defaul value')} --- запрос с имеющимся ключом в языковом списке есть и в en и в fr.<br>
             {__('lng.text2', 'defaul value')} --- запрос с имеющимся ключом в языковом списке 2 есть только в fr в en будет выведен default текст.<br>
         </div>
-
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

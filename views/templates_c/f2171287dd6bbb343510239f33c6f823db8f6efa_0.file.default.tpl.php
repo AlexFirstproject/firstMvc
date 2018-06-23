@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-06-20 22:18:31
+/* Smarty version 3.1.32, created on 2018-06-23 23:48:45
   from 'C:\OpenServer\domains\myproject2\views\templates\default.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b2aa8870f9fb2_63318793',
+  'unifunc' => 'content_5b2eb22d3e7990_55607752',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2171287dd6bbb343510239f33c6f823db8f6efa' => 
     array (
       0 => 'C:\\OpenServer\\domains\\myproject2\\views\\templates\\default.tpl',
-      1 => 1529503899,
+      1 => 1529786903,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b2aa8870f9fb2_63318793 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b2eb22d3e7990_55607752 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +72,6 @@ function content_5b2aa8870f9fb2_63318793 (Smarty_Internal_Template $_smarty_tpl)
             <?php echo __('lng.text2','defaul value');?>
  --- запрос с имеющимся ключом в языковом списке 2 есть только в fr в en будет выведен default текст.<br>
         </div>
-
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <?php echo '<script'; ?>

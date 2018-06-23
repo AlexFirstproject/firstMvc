@@ -39,9 +39,8 @@ class App
         }else{
             throw new Exception ('Method '.$controller_method.' of class '.$controller_class.' does not exist.');
         }
-        $layout_path = $layout.'.tpl';
 
-        //$layout_path = VIEWS_PATH.DS.$layout.'.html';
+        $layout_path = $layout.'.tpl';
         $layout_view_object = new View(compact('content'), $layout_path);
         echo $layout_view_object->render();
     }
